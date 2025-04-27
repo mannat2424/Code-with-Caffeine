@@ -1,7 +1,7 @@
 import joblib
 import pandas as pd
-label_encoders = joblib.load('C:/Users/abhis/OneDrive/Desktop/cs/hackowasp project/model/label_encoders.pkl')
-model = joblib.load('C:/Users/abhis/OneDrive/Desktop/cs/hackowasp project/model/student_score_predictor.pkl')
+label_encoders = joblib.load('label_encoders.pkl')
+model = joblib.load('student_score_predictor.pkl')
 
 cols = ['gender','part_time_job', 'diet_quality', 
         'internet_quality', 'parental_education_level',
