@@ -1,0 +1,90 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0a2e73, #1459c7);
+    color: #ffcc00; /* Yellow text */
+}
+
+.navbar {
+    background-color: #001f4d;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #ffcc00;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #ffcc00;
+    color: #001f4d;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+form {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 700px;
+    margin: 30px auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    color: #333; 
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #1459c7;
+    outline: none;
+}
+
+button {
+    background: #ffcc00;
+    color: #001f4d;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #e6b800; /* Slightly darker yellow for hover effect */     
+}

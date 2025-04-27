@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPAM - Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #0a2e73, #1459c7);
+            margin: 0;
+            padding: 20px;
+            color: #ffcc00;
+            text-align: center;
+        }
+
+        .container {
+            background: #ffffff;
+            color: #000000;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .result-section {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 5px solid #ffc107;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .success {
+            background-color: #d4edda;
+            padding: 10px;
+            border-left: 5px solid #28a745;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .btn {
+            margin-top: 30px;
+            background-color: #ffcc00;
+            color: #0a2e73;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #e6b800;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>SPAM Analysis Results</h1>
+
+    <div class="container">
+        <h2>Hi [Student Name]!</h2>
+
+        <div class="result-section">
+            <p><strong>Your Predicted Performance:</strong> <span style="color: green;">Good</span></p>
+
+            <div class="success">
+                <h3>Strengths ✅</h3>
+                <ul>
+                    <li>Consistent Study Hours</li>
+                    <li>High Class Attendance</li>
+                    <li>Good Sleep Routine</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <h3>Areas to Improve 📈</h3>
+                <ul>
+                    <li>Reduce time on Social Media</li>
+                    <li>Increase Exercise Frequency</li>
+                    <li>Focus on Balanced Diet</li>
+                    <li>Manage Screen Time on OTT Platforms</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 20px;">With small improvements, your performance can reach even greater heights! 🚀</p>
+        </div>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfuGu7wBChz_j3Ef3lJSP1Nn13ZnopwxMwrc36M6kTwlNdtMg/viewform" class="btn">Retake Quiz</a>
+    </div>
+
+    <script>
+        
+        const sheetUrl = 'https://script.google.com/macros/s/AKfycbzf5NHe9gejQs80maPET6rPeTcJ42fBUmoD3qXVdUsQIKd-TUCfK1SxtbS4xDdiadxi/exec';
+
+        fetch(sheetUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Assuming the first row is headers
+                const headers = data[0];
+                const results = data.slice(1); // Get the rest of the data
+
+                // Display results
+                    const resultsDiv = document.getElementById('results');
+                    results.forEach(row => {
+                        const resultHTML = `
+                                                <div class="success">
+                                                    <h3>Your Predicted Performance:</h3>
+                                                </div>`;
+                        resultsDiv.innerHTML += resultHTML;
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        </script>
+
+</body>
+</html>
